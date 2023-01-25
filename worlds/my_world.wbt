@@ -1,0 +1,207 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/boston_dynamics/spot/protos/Spot.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/toys/protos/RubberDuck.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/lego/protos/LegoWheel.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/toys/protos/PaperBoat.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/balls/protos/PingPongBall.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/kitchen/utensils/protos/Fork.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/balls/protos/SoccerBall.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/bedroom/protos/PhotoFrame.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/CorrugatedMetal.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/drinks/protos/WaterBottle.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/rocks/protos/Rock10cm.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/plants/protos/FlowerPot.proto"
+IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/computers/protos/ComputerMouse.proto"
+
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation 0.18319495914385178 0.15944312837046395 -0.9700605629339448 1.7392388525789941
+  position 2.6232651982127035 1.8631235732378493 2.6557811204965893
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 0.03 0 0
+  floorSize 10 8
+}
+WoodenBox {
+  translation 2.62 -0.46 1.63
+  name "wooden box(3)"
+  size 0.6 0.2 0.23
+}
+WoodenBox {
+  translation 3.68407 1.0465 0.77
+  rotation 0 0 1 0.785398
+  name "wooden box(2)"
+  size 1.5 0.9 1.5
+}
+WoodenBox {
+  translation 2.22 0 0.77
+  name "wooden box(4)"
+  size 1.5 0.9 1.5
+}
+Robot {
+  translation 2.84 -0.41 1.75
+  rotation 0 0 1 1.5708
+  scale 0.1 0.1 0.1
+  children [
+    SliderJoint {
+      jointParameters JointParameters {
+        axis 0.707 -0.707 0
+      }
+      device [
+        LinearMotor {
+          name "lr_l"
+          acceleration 50
+          consumptionFactor 1
+          maxVelocity 100000
+          maxPosition 8
+          maxForce 100000
+          multiplier 500
+        }
+      ]
+      endPoint Solid {
+        translation -0.095051469946176 3.4319233699461758 0.24
+        rotation 0 0 1 -0.785395307179586
+        children [
+          Shape {
+            appearance PBRAppearance {
+            }
+            geometry DEF LR Box {
+              size 1.8 0.7 0.3
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE LR
+        physics Physics {
+          density -1
+          mass 3
+          centerOfMass [
+            0 0 0
+          ]
+          inertiaMatrix [
+            1.1700000000000006 29.520000000000014 29.970000000000013
+            0 0 0
+          ]
+        }
+      }
+    }
+    Solid {
+      translation -0.330507 3.68106 0
+      rotation 0 0 1 -0.785395307179586
+      children [
+        Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 1.9 0.3 0.3
+          }
+        }
+      ]
+    }
+    DistanceSensor {
+      rotation 0 0.7071067811865475 0.7071067811865475 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+          }
+          geometry Capsule {
+            height 0.1
+            radius 0.05
+          }
+        }
+      ]
+      name "sens"
+      lookupTable [
+        0 0 0
+        10 1 0
+      ]
+      aperture 0.05
+    }
+  ]
+  name "dist"
+  controller "belt_controller"
+  supervisor TRUE
+}
+WoodenBox {
+  translation 0 0 0.77
+  name "wooden box(1)"
+  size 2.6 1.1 1.5
+}
+WoodenBox {
+  size 0.6 0.6 1.5
+}
+RubberDuck {
+  translation -0.60235 7.70526e-13 1.75039
+  rotation -1.4084671567376402e-09 -0.9999999999999999 -5.975582913139915e-09 4.479697045065608e-05
+  name "rubber duck(3)"
+}
+Spot {
+  translation 3.65312 0.851005 2.12852
+  rotation 0.0013580800559373435 0.003474650143115789 0.9999930411882598 0.7854
+  controller "get_img"
+}
+ConveyorBelt {
+  translation 0.87 0 1.53
+  size 4.2 0.7 0.2
+  appearance CorrugatedMetal {
+    colorOverride 1 0.5 1
+    textureTransform TextureTransform {
+      scale 2 2
+    }
+  }
+  borderThickness 1e-16
+  borderHeight -0.1
+  speed 0.3
+}
+RubberDuck {
+  translation 1.36765 2.43177e-13 1.7504
+  rotation -1.4084671567376402e-09 -0.9999999999999999 -5.975582913139915e-09 4.479697045065608e-05
+  name "rubber duck(2)"
+  bodyColor 0.2 0.01 1
+}
+WaterBottle {
+  mass 8
+}
+PaperBoat {
+  translation 0.27 0 1.76
+}
+E-puck {
+  translation 0.94 0 1.74
+  controller "<generic>"
+}
+E-puck {
+  translation 2.09 0 1.74
+  name "e-puck(1)"
+  controller "<generic>"
+}
+FlowerPot {
+  translation 2.82 9.40584e-07 1.8
+  rotation 0.70710528118436 3.3905113482557537e-09 -0.707108281185553 3.14159
+  physics Physics {
+  }
+}
+Rock10cm {
+  translation 1.71 0 1.79
+  rotation 0 1 0 -2.8797953071795863
+  color 0 1 1
+  physics Physics {
+  }
+}
+ComputerMouse {
+  translation 2.41 0 1.76
+  topColor 0.3 0.71 0.71
+  bottomColor 0.7 0.7 0.06
+}
