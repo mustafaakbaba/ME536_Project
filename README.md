@@ -4,7 +4,11 @@ This project detects 3 toys from the conveyor belt using cnn, and classify the u
 
 All the codes are on the master branch.
 
-Transfer learning is used with ResNet50 model. cnn4.py file is used for training the model.
+Transfer learning is used with ResNet50 model. controllers/get_img/cnn4.py file is used for training the model.
+
+The datasets for training, validation and test are in controllers/get_img/cnn folder.
+
+The model is the controllers/get_img/cnn/model/model.pth file.
 
 
 ![](photos/webots_1.png)
