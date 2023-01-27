@@ -6,6 +6,9 @@ All the codes are on the master branch.
 
 Transfer learning is used with ResNet50 model. cnn4.py file is used for training the model.
 
-![My Image](webots_1.png)
 
+![](photos/webots_1.png)
+![](photos/webots_2.png)
+![](photos/1.png)
 ![](photos/32.png)
+![](photos/34.png)
