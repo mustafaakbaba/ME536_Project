@@ -5,7 +5,6 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/project
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/WoodenBox.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/boston_dynamics/spot/protos/Spot.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
 IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/toys/protos/RubberDuck.proto"
 IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/lego/protos/LegoWheel.proto"
 IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/toys/protos/PaperBoat.proto"
@@ -13,19 +12,19 @@ IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R20
 IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/kitchen/utensils/protos/Fork.proto"
 IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/balls/protos/SoccerBall.proto"
 IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/bedroom/protos/PhotoFrame.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/CorrugatedMetal.proto"
 IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
 IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/drinks/protos/WaterBottle.proto"
 IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/rocks/protos/Rock10cm.proto"
 IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/plants/protos/FlowerPot.proto"
 IMPORTABLE EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/computers/protos/ComputerMouse.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
 
 WorldInfo {
-  basicTimeStep 16
+  basicTimeStep 8
 }
 Viewpoint {
-  orientation 0.18319495914385178 0.15944312837046395 -0.9700605629339448 1.7392388525789941
-  position 2.6232651982127035 1.8631235732378493 2.6557811204965893
+  orientation 0.2913481687985301 0.2616871895849612 -0.9201282841782812 1.7602540895158325
+  position 1.9385379870956154 4.7809595776542135 4.719275751657889
 }
 TexturedBackground {
 }
@@ -34,6 +33,8 @@ TexturedBackgroundLight {
 RectangleArena {
   translation 0.03 0 0
   floorSize 10 8
+  wallThickness 0.1
+  wallHeight 3
 }
 WoodenBox {
   translation 2.62 -0.46 1.63
@@ -143,65 +144,63 @@ WoodenBox {
 WoodenBox {
   size 0.6 0.6 1.5
 }
-RubberDuck {
-  translation -0.60235 7.70526e-13 1.75039
-  rotation -1.4084671567376402e-09 -0.9999999999999999 -5.975582913139915e-09 4.479697045065608e-05
-  name "rubber duck(3)"
-}
 Spot {
-  translation 3.65312 0.851005 2.12852
-  rotation 0.0013580800559373435 0.003474650143115789 0.9999930411882598 0.7854
+  translation 3.59656 0.907573 2.12868
+  rotation 0.0013580800558901547 0.003474660142995468 0.9999930411535134 0.785402
   controller "get_img"
-}
-ConveyorBelt {
-  translation 0.87 0 1.53
-  size 4.2 0.7 0.2
-  appearance CorrugatedMetal {
-    colorOverride 1 0.5 1
-    textureTransform TextureTransform {
-      scale 2 2
-    }
-  }
-  borderThickness 1e-16
-  borderHeight -0.1
-  speed 0.3
-}
-RubberDuck {
-  translation 1.36765 2.43177e-13 1.7504
-  rotation -1.4084671567376402e-09 -0.9999999999999999 -5.975582913139915e-09 4.479697045065608e-05
-  name "rubber duck(2)"
-  bodyColor 0.2 0.01 1
 }
 WaterBottle {
   mass 8
 }
+ComputerMouse {
+  translation -1.63861 0.00366 1.76
+  name "computer mouse(2)"
+  topColor 0.3 0.71 0.71
+  bottomColor 0.7 0.7 0.056
+}
+RubberDuck {
+  translation 0.19 0.01 1.78
+}
 PaperBoat {
-  translation 0.27 0 1.76
+  translation -0.95908 0.06689 1.76
+  name "paper boat(1)"
 }
-E-puck {
-  translation 0.94 0 1.74
-  controller "<generic>"
+PaperBoat {
+  translation 0.95092 0.06689 1.76
+  name "paper boat(2)"
 }
-E-puck {
-  translation 2.09 0 1.74
-  name "e-puck(1)"
-  controller "<generic>"
+PaperBoat {
+  translation 2.39092 0.06689 1.76
+  name "paper boat(3)"
 }
 FlowerPot {
-  translation 2.82 9.40584e-07 1.8
-  rotation 0.70710528118436 3.3905113482557537e-09 -0.707108281185553 3.14159
+  translation -1.39074 -0.0048813 1.8
+  rotation 0 1 0 -1.5707953071795862
   physics Physics {
   }
 }
+E-puck {
+  translation -0.310365 0.01909 1.74
+  name "e-puck(1)"
+  controller "<generic>"
+}
+E-puck {
+  translation 1.71964 0.01909 1.76
+  name "e-puck(2)"
+  controller "<generic>"
+}
 Rock10cm {
-  translation 1.71 0 1.79
-  rotation 0 1 0 -2.8797953071795863
+  translation -1.70692 0.0441402 1.82
+  rotation 0 1 0 -2.88
+  name "rock 10 cm(3)"
   color 0 1 1
   physics Physics {
   }
 }
-ComputerMouse {
-  translation 2.41 0 1.76
-  topColor 0.3 0.71 0.71
-  bottomColor 0.7 0.7 0.06
+ConveyorBelt {
+  translation 0.87 0 1.53
+  size 4.2 0.7 0.2
+  borderThickness 1e-16
+  borderHeight -0.1
+  speed 0.4
 }

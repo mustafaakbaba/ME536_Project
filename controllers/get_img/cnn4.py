@@ -67,7 +67,7 @@ test_directory = '/home/betul/Documents/my_project/controllers/get_img/cnn/test'
 # Batch size
 bs = 32
 # Number of classes
-num_classes = 10
+num_classes = 3
 # Load Data from folders
 data = {
     'train': datasets.ImageFolder(root=train_directory, transform=image_transforms['train']),

@@ -19,7 +19,7 @@ children_field = root_node.getField('children')
 
 obj_list = ["RubberDuck", "E-puck", "PaperBoat"]
 obj_list2 = ["RubberDuck", "E-puck", "PaperBoat", "Rock10cm", "FlowerPot", "ComputerMouse"]
-obj_list3 = ["FlowerPot"]
+#obj_list2 = ["ComputerMouse", "Rock10cm"]
 sensor_name = 'sens'
 dist = DistanceSensor(sensor_name)
 DistanceSensor.enable(dist, timestep)
@@ -32,7 +32,7 @@ i = 1
 while robot.step(timestep) != -1:
     
     #print(dist.getValue())
-    if i%100 == 0 and i <= thresh:
+    if i%280 == 0 and i <= thresh:
         obj = random.choice(obj_list)
         str_1 = obj + '{ translation ' + str(pos_value[0]) + ' ' + str(pos_value[1])+ ' ' + str(pos_value[2])
         if obj == "E-puck":
@@ -42,20 +42,20 @@ while robot.step(timestep) != -1:
             children_field.importMFNodeFromString(-1, str_1 + '}')
         
         
-    if i%50 == 0 and i > thresh:
-        obj = random.choice(obj_list3)
+    if i%280 == 0 and i > thresh:
+        obj = random.choice(obj_list2)
         str_1 = obj + '{ translation ' + str(pos_value[0]) + ' ' + str(pos_value[1])+ ' ' + str(pos_value[2])
         if obj == "E-puck":
-            print("epuck")
+            #print("epuck")
             str_2 = ' controller "<generic>"}'
             children_field.importMFNodeFromString(-1, str_1 + str_2)
         elif obj == "Rock10cm":
-            print("rock")
+            #print("rock")
             str_1 = obj + '{ translation ' + str(pos_value[0]) + ' ' + str(pos_value[1])+ ' ' + str(pos_value[2]+0.04)
-            str_2 = ' color 0 1 1 physics Physics{ density 1e+03 mass -1}}'
+            str_2 = ' rotation 0 1 0 -2.88 color 0 1 1 physics Physics{ density 1e+03 mass -1}}'
             children_field.importMFNodeFromString(-1, str_1 + str_2)
         elif obj == "FlowerPot":
-            print("pot")
+            #print("pot")
             str_1 = obj + '{ translation ' + str(pos_value[0]) + ' ' + str(pos_value[1])+ ' ' + str(pos_value[2]+0.05)
             str_2 = ' rotation 0 1 0 -1.571 physics Physics{ density 1e+03 mass -1}}'
             children_field.importMFNodeFromString(-1, str_1 + str_2)
