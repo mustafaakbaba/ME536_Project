@@ -1,3 +1,5 @@
+#All the codes are on the master branch.
+
 # ME536_Project
 
 This project detects 3 toys from the conveyor belt using cnn, and classify the unknown objects on the belts as safe or dangerous. The webots simulation environment is used for this purpose.
